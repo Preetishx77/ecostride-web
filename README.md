@@ -4,6 +4,8 @@
 <p align="center"><b>Sustaining the Sustain-enablers 🍀🌲 </b></p>
 <p align="center">A <b>Google DSC Solution Challenge</b> submission</p>
 
+<img width="1502" alt="image" src="https://github.com/Preetishx77/ecostride-web/assets/78357366/ddcbc29c-5e84-4032-a44b-07cb3460a2e5">
+
   
 <p align="center">Our platform addresses India's imminent carbon emission regulations, offering proactive solutions for individuals and businesses. Enabling early carbon offset minting and trading, we empower users to reduce their carbon footprint while participating in the emerging carbon market. With intuitive features, our cross platform web & mobile platforms facilitate collaboration between NGOs, planters, and users, promoting environmental awareness and driving meaningful contributions to climate change mitigation efforts.</p>
 
