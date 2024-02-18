@@ -17,9 +17,6 @@ You can checkout our video submission demo on youtube by clicking on the thumbna
 
   
 
-<a href="http://www.youtube.com/watch?v=dinzfBUDqi0">
-
-<img src="https://img.youtube.com/vi/dinzfBUDqi0/maxresdefault.jpg" width="500px">
 
 </a>
 
