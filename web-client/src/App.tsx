@@ -9,6 +9,7 @@ import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
 
 import {
   ErrorComponent,
+  Sider,
   ThemedLayoutV2,
   ThemedSiderV2,
   useNotificationProvider,
@@ -22,7 +23,7 @@ import routerBindings, {
   UnsavedChangesNotifier,
 } from "@refinedev/react-router-v6";
 import dataProvider from "@refinedev/simple-rest";
-import { App as AntdApp } from "antd";
+import { App as AntdApp, ConfigProvider, Menu, Typography } from "antd";
 import axios from "axios";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import { Header } from "./components/header";
@@ -42,6 +43,7 @@ import {
 } from "./pages/categories";
 import { Login } from "./pages/login";
 import { parseJwt } from "./utils/parse-jwt";
+import CreateNGO from "./pages/NGO/createNGO";
 
 const axiosInstance = axios.create();
 axiosInstance.interceptors.request.use((config) => {
@@ -129,13 +131,26 @@ function App() {
       return null;
     },
   };
-
+  const { Text } = Typography;
   return (
     <BrowserRouter>
-      <GitHubBanner />
       <RefineKbarProvider>
-        <ColorModeContextProvider>
           <AntdApp>
+          <ConfigProvider
+    theme={{
+      token: {
+        // Seed Token
+        borderRadius: 6,
+        colorTextHeading: '#4F6F52',
+        colorPrimaryBg: "#D2E3C8",
+        colorPrimary: "#4F6F52",
+        colorBgElevated: "#D2E3C8",
+        colorBgTextHover: "#D2E3C8",
+        colorTextLabel: "#4F6F52",
+        // Alias Token
+      },
+    }}
+  >
             <DevtoolsProvider>
               <Refine
                 dataProvider={dataProvider("https://api.fake-rest.refine.dev")}
@@ -144,21 +159,20 @@ function App() {
                 authProvider={authProvider}
                 resources={[
                   {
-                    name: "blog_posts",
-                    list: "/blog-posts",
-                    create: "/blog-posts/create",
-                    edit: "/blog-posts/edit/:id",
-                    show: "/blog-posts/show/:id",
+                    name: "Profile",
+                    list: "/", // Specify a unique URL for the profile
+                    show: "/", // Route to the root URL ("/") for profile details
                     meta: {
-                      canDelete: true,
-                    },
+                      // Add meta options if needed
+                      
+                    }
                   },
                   {
-                    name: "categories",
-                    list: "/categories",
-                    create: "/categories/create",
-                    edit: "/categories/edit/:id",
-                    show: "/categories/show/:id",
+                    name: "campaign",
+                    list: "/campaigns",
+                    create: "/campaigns/create",
+                    edit: "/campaigns/edit/:id",
+                    show: "/campaigns/show/:id",
                     meta: {
                       canDelete: true,
                     },
@@ -179,8 +193,8 @@ function App() {
                         fallback={<CatchAllNavigate to="/login" />}
                       >
                         <ThemedLayoutV2
+                        Title={() => <Text strong>{"Eco Stride"}</Text>}
                           Header={() => <Header sticky />}
-                          Sider={(props) => <ThemedSiderV2 {...props} fixed />}
                         >
                           <Outlet />
                         </ThemedLayoutV2>
@@ -189,7 +203,7 @@ function App() {
                   >
                     <Route
                       index
-                      element={<NavigateToResource resource="blog_posts" />}
+                      element={<CreateNGO/>}
                     />
                     <Route path="/blog-posts">
                       <Route index element={<BlogPostList />} />
@@ -197,7 +211,8 @@ function App() {
                       <Route path="edit/:id" element={<BlogPostEdit />} />
                       <Route path="show/:id" element={<BlogPostShow />} />
                     </Route>
-                    <Route path="/categories">
+                    <Route path="/" element={<CreateNGO />} />
+                    <Route path="/campaigns">
                       <Route index element={<CategoryList />} />
                       <Route path="create" element={<CategoryCreate />} />
                       <Route path="edit/:id" element={<CategoryEdit />} />
@@ -221,12 +236,11 @@ function App() {
 
                 <RefineKbar />
                 <UnsavedChangesNotifier />
-                <DocumentTitleHandler />
               </Refine>
               <DevtoolsPanel />
             </DevtoolsProvider>
+            </ConfigProvider>
           </AntdApp>
-        </ColorModeContextProvider>
       </RefineKbarProvider>
     </BrowserRouter>
   );
