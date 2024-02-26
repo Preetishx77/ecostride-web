@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "446449876620",
+    "project_id": "ecostride-333d8",
+    "storage_bucket": "ecostride-333d8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:446449876620:android:a4744ec70976614aa205a9",
+        "android_client_info": {
+          "package_name": "com.example.ecostrider"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIpBF_-qq1sfSuR3I7L17cs0dipypK0b4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
