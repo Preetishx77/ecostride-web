@@ -108,12 +108,48 @@ For industries and individual users seeking to offset their carbon footprint, th
 
 ## Setup
 
+### Web Client
+
+##### Clone the repository
+
+```bash
+
+git clone "https://github.com/Preetishx77/ecostride-web.git"
+
+```
+
+##### Move to Desired folder
+
+```bash
+
+cd web-client
+
+```
+
+##### Install required pakcages
+
+```bash
+
+npm install
+
+```
+
+##### Run on localhost
+
+```bash
+
+npm start
+
+```
+
+
 ### Flutter App
 
 ##### Clone the repository
 
 ```bash
 
+git clone "https://github.com/Preetishx77/ecostride-web.git"
 
 ```
 
@@ -121,19 +157,68 @@ For industries and individual users seeking to offset their carbon footprint, th
 
 ```bash
 
-
+cd ecostride-app
 
 ```
 
-  
+##### Install required pakcages
 
-##### To run the app, simply write
+```bash
+
+flutter pub get
+
+```
+  
+##### Run the app
 
 ```bash
 
 flutter run
 
 ```
+
+### Backend
+
+##### Clone the repository
+
+```bash
+
+git clone "https://github.com/Preetishx77/ecostride-web.git"
+
+```
+
+##### Move to Desired folder
+
+```bash
+
+cd ecostride-backend
+
+```
+
+##### Install required pakcages
+
+```bash
+
+npm install
+
+```
+
+##### Run on localhost
+
+```bash
+
+npm start
+
+```
+
+OR 
+
+```bash
+
+node index.ts
+
+```
+
 
 # About
 
@@ -149,4 +234,4 @@ There is a pressing need for a product like ours to address the imminent challen
 
   
 
-##### Made with ♥ by Team Eco Stride
+##### Made with ♥ by Team 100BUIDL
